@@ -1,13 +1,13 @@
 //
-//  Tests_macOS.swift
-//  Tests macOS
+//  FTAppUITests.swift
+//  FTAppUITests
 //
-//  Created by Mario Sandoval on 1/29/22.
+//  Created by Justin Thompson on 1/29/22.
 //
 
 import XCTest
 
-class Tests_macOS: XCTestCase {
+class FTAppUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

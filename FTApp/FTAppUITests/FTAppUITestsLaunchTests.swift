@@ -1,13 +1,13 @@
 //
-//  Tests_macOSLaunchTests.swift
-//  Tests macOS
+//  FTAppUITestsLaunchTests.swift
+//  FTAppUITests
 //
-//  Created by Mario Sandoval on 1/29/22.
+//  Created by Justin Thompson on 1/29/22.
 //
 
 import XCTest
 
-class Tests_macOSLaunchTests: XCTestCase {
+class FTAppUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
