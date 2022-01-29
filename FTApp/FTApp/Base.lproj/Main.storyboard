@@ -39,7 +39,7 @@
                                         <rect key="frame" x="0.0" y="359" width="414" height="415"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfr-fs-6bk">
-                                                <rect key="frame" x="107" y="158" width="200" height="100"/>
+                                                <rect key="frame" x="107" y="157.5" width="200" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="200" id="D3b-gQ-Qfc"/>
                                                     <constraint firstAttribute="height" constant="100" id="tLz-5p-wLJ"/>
@@ -267,10 +267,10 @@
             </objects>
             <point key="canvasLocation" x="2066.666666666667" y="93.75"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Nav Controller-->
         <scene sceneID="Ap1-AO-2Fn">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ykX-8U-IX2" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ykX-8U-IX2" customClass="NavController" customModule="FTApp" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jjG-rI-M37">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

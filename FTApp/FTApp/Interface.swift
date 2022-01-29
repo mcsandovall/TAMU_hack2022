@@ -21,7 +21,7 @@ class user_info{
     // implement the 50/30/20 rule
     
     var expected_essential : Int = 0;
-    var acutal_essentials : Int = 0;
+    var actutal_essentials : Int = 0;
     
 }
 
