@@ -8,13 +8,13 @@
 import Foundation
 
 struct financial_info {
-    var income : Int = 0;
-    var rent : Int = 0;
-    var utilities : Int = 0;
-    var groceries : Int = 0;
-    var dinning : Int = 0;
-    var entretainment : Int = 0;
-    var personal_expenses : Int = 0;
+    var income : Int = 1;
+    var rent : Int = 1;
+    var utilities : Int = 1;
+    var groceries : Int = 1;
+    var dinning : Int = 1;
+    var entretainment : Int = 1;
+    var personal_expenses : Int = 1;
 }
 
 class user_info{
