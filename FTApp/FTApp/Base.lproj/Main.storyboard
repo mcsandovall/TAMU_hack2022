@@ -897,7 +897,7 @@
             </objects>
             <point key="canvasLocation" x="6969.5652173913049" y="443.97321428571428"/>
         </scene>
-        <!--Your Budget-->
+        <!--Budget Tab View Controller-->
         <scene sceneID="8rt-iJ-AX8">
             <objects>
                 <viewController id="3s4-nj-s4Z" customClass="BudgetTabViewController" customModule="FTApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -1170,7 +1170,7 @@
                             <constraint firstItem="Czk-p0-xOG" firstAttribute="bottom" secondItem="MEk-se-ODG" secondAttribute="bottom" id="wzk-2Q-J0Q"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Your Budget" id="2HX-W0-yOH"/>
+                    <tabBarItem key="tabBarItem" image="list.dash" catalog="system" id="2HX-W0-yOH"/>
                     <connections>
                         <outlet property="DinningLabel" destination="7Os-lV-ZCG" id="kkX-aT-ane"/>
                         <outlet property="EntertainmentLabel" destination="zEQ-Kx-tkB" id="LeG-Vv-sIn"/>
@@ -1194,7 +1194,7 @@
             <objects>
                 <tabBarController id="JJf-kH-gcs" customClass="TabBarViewController" customModule="FTApp" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="pqr-FL-fOD"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionIndicatorImage="list.bullet.rectangle" catalog="system" id="3lP-7r-ZLy">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3lP-7r-ZLy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1230,11 +1230,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="dIY-5W-R46"/>
         <segue reference="wgf-c7-Suf"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="list.bullet.rectangle" catalog="system" width="128" height="93"/>
+        <image name="list.dash" catalog="system" width="128" height="85"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

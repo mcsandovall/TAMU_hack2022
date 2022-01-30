@@ -7,13 +7,15 @@
 
 import UIKit
 
-class LongTermViewController: UIViewController {
+class LongTermViewController : UIViewController {
     @IBOutlet weak var AgeTextField: UITextField!
     @IBOutlet weak var ActualButton: UIButton!
-    @IBOutlet var pgTextView: UILabel!
+    @IBOutlet var pgTextView : UILabel!
     var finances = financial_info()
     var userData = user_info()
     @IBOutlet var RetirementTextField: UITextField!
+    
+    
     
     
     override func viewDidLoad() {
@@ -27,6 +29,9 @@ class LongTermViewController: UIViewController {
         
         AgeTextField.keyboardType = UIKeyboardType.numberPad
         ActualButton.setTitle(user_info.toString(doubleValue: userData.actual_percent) + "%", for: .normal)
+        
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -46,4 +51,24 @@ class LongTermViewController: UIViewController {
         userData.choice = 1
         performSegue(withIdentifier: "RetirementData", sender: self)
     }
+    
+    
+    /*
+    func setupTextFields() {
+            let toolbar = UIToolbar()
+            let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
+                                            target: nil, action: nil)
+            let doneButton = UIBarButtonItem(title: "Done", style: .done,
+                                             target: self, action: #selector(doneButtonTapped))
+            
+            toolbar.setItems([flexSpace, doneButton], animated: true)
+            toolbar.sizeToFit()
+            
+            AgeTextField.inputAccessoryView = toolbar
+            RetirementTextField.inputAccessoryView = toolbar
+        }
+        
+        @objc func doneButtonTapped() {
+            view.endEditing(true)
+        }*/
 }
