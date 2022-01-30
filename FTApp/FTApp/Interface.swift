@@ -21,16 +21,19 @@ class user_info{
     // implement the 50/30/20 rule
     
     // var of expected essentials (perfect world scenario)
-    var expected_essential : Int;
-    var expected_non_essentials : Int;
-    var expected_savings : Int;
+    var expected_essential : Int = 0;
+    var expected_non_essentials : Int = 0;
+    var expected_savings : Int = 0;
     
     // vars of actual calculations, from the user
-    var acutal_essentials : Int;
-    var acutal_non_essentils : Int;
-    var actual_savings : Int;
+    var acutal_essentials : Int = 0;
+    var acutal_non_essentils : Int = 0;
+    var actual_savings : Int = 0;
     
-    init(info : financial_info){
+    init(){
+    }
+    
+    func set_financialInfo(info : financial_info){
         // work with expected variables
         expected_essential = Int( Double(info.income) * 0.5 );
         expected_non_essentials = Int( Double(info.income) * 0.3);
@@ -54,5 +57,71 @@ class user_info{
     
     func get_savings_difference() -> Int{
         return expected_savings - expected_savings;
+    }
+    
+    // save for retirement functions ASUME 5% return on the market
+    
+    // based on expected info
+    func expected_retiremnet(age : Int) -> [Int]{
+        var temp: Int = 0;
+        var array : [Int] = [];
+        for year in age...65{
+            array[year - age] = Int( Double( Double(temp + expected_savings) * 1.05));
+            temp = array[year - age];
+        }
+                    
+        return array;
+    }
+    
+    func acutal_retiremnet(age: Int) -> [Int]{
+        var temp2 : Int = 0;
+        var array : [Int] = [];
+        for year in age...65{
+            array[year - age] = Int( Double( Double(temp2 + actual_savings) * 1.05));
+            temp2 = array[year - age];
+        }
+        return array;
+    }
+    
+    // make a savings
+    func expected_savingFund(goal : Int) -> Int{
+        var time : Int = 0;
+        var _goal : Int = goal;
+        while(_goal > 0){
+            _goal -= expected_savings;
+            time += 1;
+        }
+        return time;
+    }
+    
+    func actual_savingFund(goal : Int) -> Int{
+        var time : Int = 0;
+        var _goal : Int = goal;
+        while(_goal > 0){
+            _goal -= actual_savings;
+            time += 1;
+        }
+        return time;
+    }
+    
+    // repay the debt
+    func expected_repay(debt : Int) -> Int{
+        var time : Int = 0;
+        var _debt : Int = debt;
+        while(_debt > 0){
+            _debt -= expected_savings;
+            time += 1;
+        }
+        return time;
+    }
+    
+    func actual_repay(debt : Int) -> Int{
+        var time : Int = 0;
+        var _debt : Int = debt;
+        while(_debt > 0){
+            _debt -= actual_savings;
+            time += 1;
+        }
+        return time;
     }
 }
