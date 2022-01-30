@@ -13,6 +13,7 @@ class NavController: UINavigationController {
     var gotExpenses : Bool = false
     var gotIncome : Bool = false
     
+    
     init(){
         finances = financial_info()
         print("new controller")

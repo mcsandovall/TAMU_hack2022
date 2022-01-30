@@ -39,6 +39,11 @@ class user_info{
     var acutal_essentials : Double = 0;
     var acutal_non_essentils : Double = 0;
     var actual_savings : Double = 0;
+    var actual_percent : Double = 0;
+    
+    var age = 0
+    var retirementAge = 65
+    var choice = 0//0 for actual, 1 for 20%
     
     init(){
     }
@@ -55,6 +60,8 @@ class user_info{
         acutal_essentials =  (info.rent + info.utilities + info.groceries)// / sum
         acutal_non_essentils = (info.dinning + info.entretainment + info.personal_expenses)// / sum
         actual_savings = info.income - (acutal_essentials + acutal_non_essentils);
+        actual_percent = (actual_savings / info.income) * 100
+        
     }
     
     static func toString(doubleValue d : Double) -> String{
@@ -86,8 +93,8 @@ class user_info{
     func expected_retiremnet(age : Int) -> [Double]{
         var temp: Double = 0;
         var array : [Double] = [];
-        for year in age...65{
-            array[year - age] = (temp + expected_savings) * 1.05;
+        for year in age...retirementAge{
+            array.append((temp + expected_savings*12) * 1.04)
             temp = array[year - age];
         }
                     
@@ -96,9 +103,9 @@ class user_info{
     
     func acutal_retiremnet(age: Int) -> [Double]{
         var temp2 : Double = 0;
-        var array : [Double] = [];
-        for year in age...65{
-            array[year - age] = (temp2 + actual_savings) * 1.05;
+        var array : [Double] = []
+        for year in age...retirementAge{
+            array.append((temp2 + actual_savings*12) * 1.04)
             temp2 = array[year - age];
         }
         return array;

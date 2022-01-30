@@ -13,6 +13,9 @@
 		6C7E7BF527A6139900B3A4BA /* ConfirmIncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7E7BF427A6139900B3A4BA /* ConfirmIncomeViewController.swift */; };
 		6C7E7BF727A615F900B3A4BA /* BudgetTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7E7BF627A615F900B3A4BA /* BudgetTabViewController.swift */; };
 		6CB91B2A27A646BB00AC6AED /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB91B2927A646BB00AC6AED /* TabBarViewController.swift */; };
+		6CB91B2C27A650D500AC6AED /* LongTermViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB91B2B27A650D500AC6AED /* LongTermViewController.swift */; };
+		6CB91B2E27A66FEC00AC6AED /* DataPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB91B2D27A66FEC00AC6AED /* DataPopupViewController.swift */; };
+		6CB91B3427A679E200AC6AED /* DataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB91B3327A679E200AC6AED /* DataCell.swift */; };
 		6CDF17B827A5C88C00585B89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDF17B727A5C88C00585B89 /* AppDelegate.swift */; };
 		6CDF17BA27A5C88C00585B89 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDF17B927A5C88C00585B89 /* SceneDelegate.swift */; };
 		6CDF17BC27A5C88C00585B89 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDF17BB27A5C88C00585B89 /* HomeViewController.swift */; };
@@ -50,6 +53,9 @@
 		6C7E7BF427A6139900B3A4BA /* ConfirmIncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmIncomeViewController.swift; sourceTree = "<group>"; };
 		6C7E7BF627A615F900B3A4BA /* BudgetTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetTabViewController.swift; sourceTree = "<group>"; };
 		6CB91B2927A646BB00AC6AED /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		6CB91B2B27A650D500AC6AED /* LongTermViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongTermViewController.swift; sourceTree = "<group>"; };
+		6CB91B2D27A66FEC00AC6AED /* DataPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPopupViewController.swift; sourceTree = "<group>"; };
+		6CB91B3327A679E200AC6AED /* DataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCell.swift; sourceTree = "<group>"; };
 		6CDF17B427A5C88C00585B89 /* FTApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FTApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CDF17B727A5C88C00585B89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6CDF17B927A5C88C00585B89 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +132,9 @@
 				6CB91B2927A646BB00AC6AED /* TabBarViewController.swift */,
 				6CDF17EB27A5F4DD00585B89 /* NavController.swift */,
 				6C7E7BF627A615F900B3A4BA /* BudgetTabViewController.swift */,
+				6CB91B2B27A650D500AC6AED /* LongTermViewController.swift */,
+				6CB91B2D27A66FEC00AC6AED /* DataPopupViewController.swift */,
+				6CB91B3327A679E200AC6AED /* DataCell.swift */,
 				6CDF17BD27A5C88C00585B89 /* Main.storyboard */,
 				6CDF17C027A5C88D00585B89 /* Assets.xcassets */,
 				6CDF17C227A5C88D00585B89 /* LaunchScreen.storyboard */,
@@ -288,11 +297,14 @@
 				6C7E7BF527A6139900B3A4BA /* ConfirmIncomeViewController.swift in Sources */,
 				6C7E7BF327A610C800B3A4BA /* GetIncomeViewController.swift in Sources */,
 				6CDF17E827A5D6C900585B89 /* GetBudgetViewController.swift in Sources */,
+				6CB91B2C27A650D500AC6AED /* LongTermViewController.swift in Sources */,
 				6CDF17BA27A5C88C00585B89 /* SceneDelegate.swift in Sources */,
 				0A3D448627A5D93F00BF55F1 /* Interface.swift in Sources */,
 				6CDF17EC27A5F4DD00585B89 /* NavController.swift in Sources */,
 				6C7E7BF127A6055A00B3A4BA /* ConfirmBudgetViewController.swift in Sources */,
 				6C7E7BF727A615F900B3A4BA /* BudgetTabViewController.swift in Sources */,
+				6CB91B3427A679E200AC6AED /* DataCell.swift in Sources */,
+				6CB91B2E27A66FEC00AC6AED /* DataPopupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
