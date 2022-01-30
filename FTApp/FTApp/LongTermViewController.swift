@@ -28,6 +28,7 @@ class LongTermViewController : UIViewController {
         pgTextView.text = "Based on your savings of $" + user_info.toString(doubleValue: userData.actual_savings) + " per month, we can calculate how much money you will have in retirement based on your current age, your retirement age, and an assumed 4% annual return. Your savings make up " + user_info.toString(doubleValue: userData.actual_percent) + "% of your income. According to the 50/ 30/ 20 rule, savings should make up at least 20% of your income ($" + user_info.toString(doubleValue: userData.expected_savings) + "). See your retirement data for either of these percentages by entering your age below."
         
         AgeTextField.keyboardType = UIKeyboardType.numberPad
+        RetirementTextField.keyboardType = UIKeyboardType.numberPad
         ActualButton.setTitle(user_info.toString(doubleValue: userData.actual_percent) + "%", for: .normal)
         
         let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
