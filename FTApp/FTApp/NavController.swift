@@ -8,16 +8,22 @@
 import UIKit
 
 class NavController: UINavigationController {
-    var finances : financial_info = financial_info()
-    var userData : user_info? = nil
+    var finances : financial_info
+    var userData : user_info?
+    var gotExpenses : Bool = false
+    var gotIncome : Bool = false
     
     init(){
-        //userData = user_info(info: finances)
+        finances = financial_info()
+        print("new controller")
+        userData = user_info()
         super.init(navigationBarClass: nil, toolbarClass: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
-        //userData = user_info(info: finances)
+        finances = financial_info()
+        print("new controller")
+        userData = user_info()
         super.init(coder: aDecoder)
     }
     
@@ -28,7 +34,12 @@ class NavController: UINavigationController {
     
     func setFinances(finances f : financial_info){
         self.finances = f
-        
+        userData!.set_financialInfo(info: finances)
+    }
+    
+    func setIncome(income i : Double){
+        finances.income = i
+        userData!.set_financialInfo(info: finances)
     }
 
 }

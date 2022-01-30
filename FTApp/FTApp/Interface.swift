@@ -8,85 +8,106 @@
 import Foundation
 
 struct financial_info {
-    var income : Int = 1;
-    var rent : Int = 1;
-    var utilities : Int = 1;
-    var groceries : Int = 1;
-    var dinning : Int = 1;
-    var entretainment : Int = 1;
-    var personal_expenses : Int = 1;
+    var income : Double
+    var rent : Double
+    var utilities : Double
+    var groceries : Double
+    var dinning : Double
+    var entretainment : Double
+    var personal_expenses : Double
+    init(){
+        print("new finances")
+        income = 1
+        rent = 1
+        utilities = 1
+        groceries = 1
+        dinning = 1
+        entretainment = 1
+        personal_expenses = 1
+    }
 }
 
 class user_info{
     // implement the 50/30/20 rule
     
     // var of expected essentials (perfect world scenario)
-    var expected_essential : Int = 0;
-    var expected_non_essentials : Int = 0;
-    var expected_savings : Int = 0;
+    var expected_essential : Double = 0;
+    var expected_non_essentials : Double = 0;
+    var expected_savings : Double = 0;
     
     // vars of actual calculations, from the user
-    var acutal_essentials : Int = 0;
-    var acutal_non_essentils : Int = 0;
-    var actual_savings : Int = 0;
+    var acutal_essentials : Double = 0;
+    var acutal_non_essentils : Double = 0;
+    var actual_savings : Double = 0;
     
     init(){
     }
     
     func set_financialInfo(info : financial_info){
         // work with expected variables
-        expected_essential = Int( Double(info.income) * 0.5 );
-        expected_non_essentials = Int( Double(info.income) * 0.3);
-        expected_savings = Int ( Double(info.income) * 0.2);
+        expected_essential = info.income * 0.5
+        expected_non_essentials = info.income * 0.3
+        expected_savings = info.income * 0.2
         
         //actual values
-        let sum : Int = info.rent + info.utilities + info.groceries + info.dinning + info.entretainment + info.personal_expenses;
+        let sum : Double = info.rent + info.utilities + info.groceries + info.dinning + info.entretainment + info.personal_expenses;
         
-        acutal_essentials = Int (Double( (info.rent + info.utilities + info.groceries) / sum));
-        acutal_non_essentils = Int ( Double( (info.dinning + info.entretainment + info.personal_expenses) / sum));
+        acutal_essentials =  (info.rent + info.utilities + info.groceries)// / sum
+        acutal_non_essentils = (info.dinning + info.entretainment + info.personal_expenses)// / sum
         actual_savings = info.income - (acutal_essentials + acutal_non_essentils);
     }
     
-    func get_essential_differnece() -> Int{
+    static func toString(doubleValue d : Double) -> String{
+        var str = String(d)
+        while(str.firstIndex(of: ".")!.encodedOffset <= str.count - 4){
+            str = str.substring(to: String.Index(encodedOffset: str.endIndex.encodedOffset - 1))
+        }
+        while(str.firstIndex(of: ".")!.encodedOffset >= str.count - 2){
+            str = str + "0"
+        }
+        return str
+    }
+    
+    func get_essential_differnece() -> Double{
         return acutal_essentials - expected_essential;
     }
     
-    func get_non_essential_difference() -> Int{
+    func get_non_essential_difference() -> Double{
         return acutal_non_essentils - expected_non_essentials;
     }
     
-    func get_savings_difference() -> Int{
+    func get_savings_difference() -> Double{
         return expected_savings - expected_savings;
     }
     
-    // save for retirement functions ASUME 5% return on the market
+    // save for retirement functions ASSUME 5% return on the market
     
     // based on expected info
-    func expected_retiremnet(age : Int) -> [Int]{
-        var temp: Int = 0;
-        var array : [Int] = [];
+    func expected_retiremnet(age : Int) -> [Double]{
+        var temp: Double = 0;
+        var array : [Double] = [];
         for year in age...65{
-            array[year - age] = Int( Double( Double(temp + expected_savings) * 1.05));
+            array[year - age] = (temp + expected_savings) * 1.05;
             temp = array[year - age];
         }
                     
         return array;
     }
     
-    func acutal_retiremnet(age: Int) -> [Int]{
-        var temp2 : Int = 0;
-        var array : [Int] = [];
+    func acutal_retiremnet(age: Int) -> [Double]{
+        var temp2 : Double = 0;
+        var array : [Double] = [];
         for year in age...65{
-            array[year - age] = Int( Double( Double(temp2 + actual_savings) * 1.05));
+            array[year - age] = (temp2 + actual_savings) * 1.05;
             temp2 = array[year - age];
         }
         return array;
     }
     
     // make a savings
-    func expected_savingFund(goal : Int) -> Int{
+    func expected_savingFund(goal : Double) -> Int{
         var time : Int = 0;
-        var _goal : Int = goal;
+        var _goal : Double = goal;
         while(_goal > 0){
             _goal -= expected_savings;
             time += 1;
@@ -94,9 +115,9 @@ class user_info{
         return time;
     }
     
-    func actual_savingFund(goal : Int) -> Int{
+    func actual_savingFund(goal : Double) -> Int{
         var time : Int = 0;
-        var _goal : Int = goal;
+        var _goal : Double = goal;
         while(_goal > 0){
             _goal -= actual_savings;
             time += 1;
@@ -105,9 +126,9 @@ class user_info{
     }
     
     // repay the debt
-    func expected_repay(debt : Int) -> Int{
+    func expected_repay(debt : Double) -> Int{
         var time : Int = 0;
-        var _debt : Int = debt;
+        var _debt : Double = debt;
         while(_debt > 0){
             _debt -= expected_savings;
             time += 1;
@@ -115,9 +136,9 @@ class user_info{
         return time;
     }
     
-    func actual_repay(debt : Int) -> Int{
+    func actual_repay(debt : Double) -> Int{
         var time : Int = 0;
-        var _debt : Int = debt;
+        var _debt : Double = debt;
         while(_debt > 0){
             _debt -= actual_savings;
             time += 1;

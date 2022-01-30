@@ -18,17 +18,18 @@ class ConfirmBudgetViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Confirm Budget"
         var finances : financial_info = financial_info()
         if let NC = navigationController as? NavController{
             finances = NC.finances
         }
         
-        RentLabel.text = "Rent : $"  + String(finances.rent)
-        UtilitiesLabel.text = "Utilities : $"  + String(finances.utilities)
-        GroceriesLabel.text = "Groceries : $"  + String(finances.groceries)
-        DinningLabel.text = "Dinning : $"  + String(finances.dinning)
+        RentLabel.text = "Rent : $"  + user_info.toString(doubleValue: finances.rent)
+        UtilitiesLabel.text = "Utilities : $"  + user_info.toString(doubleValue: finances.utilities)
+        GroceriesLabel.text = "Groceries : $"  + user_info.toString(doubleValue: finances.groceries)
+        DinningLabel.text = "Dinning : $"  + user_info.toString(doubleValue: finances.dinning)
         EntertainmentLabel.text = "Entertainment : $"  + String(finances.entretainment)
-        OtherLabel.text = "Other : $"  + String(finances.personal_expenses)
+        OtherLabel.text = "Other : $"  + user_info.toString(doubleValue: finances.personal_expenses)
         
         // Do any additional setup after loading the view.
     }
