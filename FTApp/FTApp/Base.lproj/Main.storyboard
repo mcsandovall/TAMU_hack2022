@@ -897,7 +897,7 @@
             </objects>
             <point key="canvasLocation" x="6969.5652173913049" y="443.97321428571428"/>
         </scene>
-        <!--Budget Tab View Controller-->
+        <!--Your Budget-->
         <scene sceneID="8rt-iJ-AX8">
             <objects>
                 <viewController id="3s4-nj-s4Z" customClass="BudgetTabViewController" customModule="FTApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -1170,7 +1170,7 @@
                             <constraint firstItem="Czk-p0-xOG" firstAttribute="bottom" secondItem="MEk-se-ODG" secondAttribute="bottom" id="wzk-2Q-J0Q"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" id="2HX-W0-yOH"/>
+                    <tabBarItem key="tabBarItem" title="Your Budget" id="2HX-W0-yOH"/>
                     <connections>
                         <outlet property="DinningLabel" destination="7Os-lV-ZCG" id="kkX-aT-ane"/>
                         <outlet property="EntertainmentLabel" destination="zEQ-Kx-tkB" id="LeG-Vv-sIn"/>
